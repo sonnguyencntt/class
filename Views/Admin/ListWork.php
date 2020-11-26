@@ -127,7 +127,7 @@ else
                         <input style="margin-top: 20px;" type="text" class="form-control" name="title" placeholder="Chủ đề">
 
                         <input style="margin-top: 20px;" type="text" class="form-control" name = "content" placeholder="Nội dung">
-                        <input style="margin-top: 20px;" type="date" class="form-control" name = "time" placeholder="Thời hạn" >
+                        <input style="margin-top: 20px;" type="date" class="form-control" name = "time" placeholder="Thời hạn" required >
                         <input type="hidden" name="id_group" value ="<?php echo "$id_group" ?>">
                         <br>
                         <label for="fileUpload">UpLoad File:</label>
