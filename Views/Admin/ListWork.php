@@ -83,7 +83,7 @@ else
            foreach ($a as $s) {
      
         ?>
-                    <div onclick="changeTab('3')" class="container" style="display: flex;
+                    <div onclick="changeTab(<?= $s->id_assign ?>)" class="container" style="display: flex;
     justify-content: space-between;">
                         <span><?= $s->title?></span>
                         <span><?= $s->content?></span>
@@ -161,7 +161,7 @@ else
 
     }
     function changeTab($id) {
-        window.location.href = 'Archive.php?id=<?= $s->id_assign ?>&d=<?= $s->id_group ?>';
+        window.location.href = 'Archive.php?id='+$id+'&d=<?= $s->id_group ?>';
     }
 </script>
 <script>
