@@ -111,3 +111,14 @@ body {
 h5 , h3 {
     color: #915555;
 }
+.logout{
+    display: flex;  
+}
+.logout>a{
+    margin: auto;
+    color: beige;
+    font-size: 20px;
+}
+.modal-body>*{
+    margin-top: 15px;
+}

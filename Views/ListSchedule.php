@@ -16,13 +16,16 @@ else
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./../Assets/lib/bootstrap.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./../../Assets/schedule.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="./../Assets/schedule.css">
+	<script src="./../Assets/lib/jquery.js"></script>
+
+	<script src="./../Assets/lib/sweet.js"></script>
+	<script src="./../Assets/lib/bootstrap.js"></script>
+
     <title>Document</title>
 </head>
 
@@ -60,8 +63,13 @@ else
                 require_once "./../Modals/group_modal.php";
                 // $group = new Group(null,null,null,null,null);
                 $data = Group::getForUser($_SESSION['id']);
-               
-                foreach ($data as $value) {
+               if(count($data)>0)
+               {
+
+           
+                foreach ($data as $value) 
+                {
+                    
                     echo '
                 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                     <div class="card">
@@ -88,7 +96,11 @@ else
                 </div>
                 ';
                 }
-               
+            }
+                else
+                {
+                    echo "<h2>Không có lớp</h2>";
+                }
                 ?>
               
                
@@ -143,9 +155,9 @@ else
                     <!-- Modal body -->
                     <div class="modal-body">
                         <input name = "id"type="text" class="form-control" placeholder="auto" disabled>
-                        <input name = "name"style="margin-top: 20px;" type="text" class="form-control" placeholder="Nhập tên lớp">
-                        <input name = "subject"style="margin-top: 20px;" type="text" class="form-control" placeholder="Nhập nội dung">
-                        <input name = "code"style="margin-top: 20px;" type="text" class="form-control" placeholder="Nhập mã lớp">
+                        <input name = "name" type="text" class="form-control" placeholder="Nhập tên lớp">
+                        <input name = "subject" type="text" class="form-control" placeholder="Nhập nội dung">
+                        <input name = "code" type="text" class="form-control" placeholder="Nhập mã lớp">
 
 
                     </div>
@@ -171,9 +183,9 @@ else
                     <!-- Modal body -->
                     <div class="modal-body">
                         <input name = "id-e"type="text" class="form-control" placeholder="Nhập mã lớp" placeholder="auto" disabled>
-                        <input name = "name-e"style="margin-top: 20px;" type="text" class="form-control" placeholder="Nhập tên lớp">
-                        <input name = "subject-e"style="margin-top: 20px;" type="text" class="form-control" placeholder="Nhập nội dung">
-                        <input name = "code-e"style="margin-top: 20px;" type="text" class="form-control" placeholder="Nhập mã lớp">
+                        <input name = "name-e" type="text" class="form-control" placeholder="Nhập tên lớp">
+                        <input name = "subject-e" type="text" class="form-control" placeholder="Nhập nội dung">
+                        <input name = "code-e" type="text" class="form-control" placeholder="Nhập mã lớp">
 
 
                     </div>

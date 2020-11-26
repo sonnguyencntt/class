@@ -13,11 +13,11 @@
             $conn =DB::GetConnection();
             $stms = mysqli_query($conn,$sql);
             if ($stms) {
-                echo "thanh công ";
+                header("Location: ./../success.php");
                 
             }
             else {
-                echo "thất bại";
+                header("Location: ./../success.php");
             }
 	
 	

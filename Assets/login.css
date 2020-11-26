@@ -1,0 +1,18 @@
+body{
+    background: #a5b5b6
+}
+.header-login{
+    height : 100px;
+    display: flex
+}
+.header-login>label{
+    font-size: 30px;
+    color: darkred;
+    margin:auto
+}
+.group-btn{
+    display: flex;
+}
+.input{
+    margin-left: auto;
+}

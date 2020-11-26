@@ -16,13 +16,13 @@ else
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./../../Assets/lib/font.css">
+	<script src="./../../Assets/lib/jquery.js"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./../../Assets/listwork_ad.css">
+	<link rel="stylesheet" href="./../../Assets/lib/bootstrap.css">
+	<script src="./../../Assets/lib/sweet.js"></script>
+    <script src="./../../Assets/lib/bootstrap.js"></script>    
+      <link rel="stylesheet" href="./../../Assets/listwork_ad.css">
     <title>Document</title>
 </head>
 
@@ -38,11 +38,8 @@ else
                     <a class="fea-b" href="./../ListSchedule.php">Giảng Dạy</a>
                 </div>
             </div>
-            <div class="logout" style="display: flex;">
-                    <a href="./../../Controllers/logout.php" style="     margin: auto;
-    color: #2e4e6a;
-    font-size: 20px;
-    padding-right: 20px;">Đăng xuất</a>
+            <div class="logout" >
+                    <a href="./../../Controllers/logout.php" >Đăng xuất</a>
             </div>
         </div>
     </div>
@@ -51,13 +48,12 @@ else
         <div class="nav">
             <div id="left">
                 <div><a  <?php $id_G = $_GET['id_group']; echo "href='Room.php?id=$id_G'" ?>>Hành Động</a></div>
-                <div  style="    border-right: 1px solid #b0c1ce;
-    border-width: 5px;"><a href="">Bài Tập Trên Lớp</a></div>
+                <div class="active"><a href="">Bài Tập Trên Lớp</a></div>
 
 
             </div>
         </div>
-        <div style="background-color: #9D6F68;
+        <div class="box1"
 ">
             <div id="left">
 
@@ -83,11 +79,11 @@ else
            foreach ($a as $s) {
      
         ?>
-                    <div onclick="changeTab(<?= $s->id_assign ?>)" class="container" style="display: flex;
-    justify-content: space-between;">
+                    <div onclick="changeTab(<?= $s->id_assign ?>)" class="container tab" 
+   >
                         <span><?= $s->title?></span>
                         <span><?= $s->content?></span>
-                        <span><?= $s->time_deadline?></span>
+                        <span><?= date("d-m-Y", strtotime($s->time_deadline))?></span>
                         <span><a href="<?= $s->file?>" download>download</a></span>
                     </div>
 
@@ -131,7 +127,7 @@ else
                         <input style="margin-top: 20px;" type="text" class="form-control" name="title" placeholder="Chủ đề">
 
                         <input style="margin-top: 20px;" type="text" class="form-control" name = "content" placeholder="Nội dung">
-                        <input style="margin-top: 20px;" type="text" class="form-control" name = "time" placeholder="Thời hạn" >
+                        <input style="margin-top: 20px;" type="date" class="form-control" name = "time" placeholder="Thời hạn" >
                         <input type="hidden" name="id_group" value ="<?php echo "$id_group" ?>">
                         <br>
                         <label for="fileUpload">UpLoad File:</label>

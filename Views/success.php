@@ -5,70 +5,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald|Roboto">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
-
+<link rel="stylesheet" href="./../Assets/success.css">
     <title>Document</title>
 </head>
 
-<style>
-    /* 
-Practicing HTML CSS, layout based on Daily Success UI Layout, link to original codepen here: https://codepen.io/iheartkode/full/yJBBZZ/ 
-*/
 
-body {
-  text-align: center;
-  font-family: Oswald;
-  margin-top: 50px;
-}
 
-.main-container {
-  width: 500px;
-  height: 500px;
-  margin: 0 auto;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  background-color: #f0f0f0;
-}
 
-.top-container {
-  height: 280px;
-  background-color: #29CDB5;
-}
-
-i.bigger-size {
-  font-size: 280px;
-  color: white;
-}
-
-.bottom-container {
-  margin-top: 30px;
-}
-
-button {
-  font-family: Roboto;
-  background-color: #f0f0f0;
-  border-radius: 15px;
-  padding: 15px;
-  width: 150px;
-  border: 3px solid #29CDB5;
-  color: #555;
-}
-
-button:hover {
-  background-color: #29CDB5;
-  color: white;
-  cursor: pointer;
-}
-
-h1 {
-  margin-bottom: -15px;
-  color: #555;
-}
-
-p {
-  font-size: 20px;
-  color: #555;
-}
-</style>
 <body>
     <!-- 
 Practicing HTML CSS, layout based on Daily Success UI Layout, link to original codepen here: https://codepen.io/iheartkode/full/yJBBZZ/ -->

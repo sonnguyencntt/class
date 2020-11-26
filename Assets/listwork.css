@@ -255,3 +255,22 @@ margin-top: 100px;
 }
 .container:hover{
     background-color: #aea9a9;    }
+.logout{
+    display: flex;
+}
+.logout>a{
+    margin: auto;
+    color: #2e4e6a;
+    font-size: 20px;
+    padding-right: 20px; 
+}
+.active{
+    border-right: 1px solid #b0c1ce;
+    border-width: 5px;
+}
+.box1{
+    background-color: #9D6F68;  
+}
+.tab{
+    display: flex;
+    justify-content: space-between;}
