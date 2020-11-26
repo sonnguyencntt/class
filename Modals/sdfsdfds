@@ -1,0 +1,7 @@
+<?php
+	require_once('config.php');
+
+	$tenbaihat = $_POST['content'];
+	$casy = $_POST['myFile'];
+	echo $tenbaihat;
+?>
