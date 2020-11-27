@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2020 at 10:48 AM
+-- Generation Time: Nov 27, 2020 at 03:19 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.31
 
@@ -42,12 +42,9 @@ CREATE TABLE `assignment` (
 --
 
 INSERT INTO `assignment` (`id_assign`, `id_group`, `title`, `content`, `time_deadline`, `file`) VALUES
-(1, 1, 'dfsdf', 'sdf', '2020-11-18', 'dfsdf'),
-(2, 3, 'ádfsadf', 'ádfsdf', '2020-11-18', 'dfsd'),
-(3, 0, '$title', '', '2020-11-18', 'sad'),
-(4, 4, 'asd', '', '0000-00-00', './../../upload/JSON.png'),
-(5, 4, 'sda', '', '0000-00-00', './../../upload/JSON.png'),
-(6, 4, 'sda', '', '0000-00-00', './../../upload/JSON.png');
+(7, 11, 'asd', '', '0000-00-00', './../../upload/background-triangle.jpg'),
+(8, 0, '', '', '0000-00-00', './../../upload/'),
+(9, 11, 'jk', '', '2020-11-05', './../../upload/background-triangle.jpg');
 
 -- --------------------------------------------------------
 
@@ -63,24 +60,6 @@ CREATE TABLE `comment` (
   `comment` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `comment`
---
-
-INSERT INTO `comment` (`id_cmt`, `id_login`, `id_group`, `id_assign`, `comment`) VALUES
-(1, 1, 2, 2, 'sdfsdf'),
-(2, 0, 2, 2, 'asdasd'),
-(3, 0, 2, 2, 'asdasd'),
-(4, 0, 2, 2, 'asd'),
-(5, 0, 2, 2, 'asd'),
-(6, 1, 3, 2, 'asd'),
-(7, 1, 3, 2, 'asd'),
-(8, 1, 3, 2, 'asda'),
-(9, 1, 4, 2, 'asdas'),
-(10, 1, 3, 2, 'asd'),
-(11, 1, 1, 2, 'fsd'),
-(12, 1, 1, 2, 'ad');
-
 -- --------------------------------------------------------
 
 --
@@ -95,18 +74,6 @@ CREATE TABLE `detail` (
   `content` text NOT NULL,
   `file` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `detail`
---
-
-INSERT INTO `detail` (`id_detail`, `id_group`, `id_login`, `id_assignment`, `content`, `file`) VALUES
-(1, 3, 2, 2, 'dsf', '../../homework/Untitled.png'),
-(2, 1, 2, 2, 'adasda ', '../../homework/gAME.docx'),
-(3, 0, 2, 0, '', '../../homework/PART4.1.docx'),
-(4, 0, 2, 0, '', '../../homework/PART4.1.docx'),
-(5, 0, 2, 0, 'asd', '../../homework/PART4.1.docx'),
-(6, 0, 2, 0, '', '../../homework/');
 
 -- --------------------------------------------------------
 
@@ -127,10 +94,7 @@ CREATE TABLE `group` (
 --
 
 INSERT INTO `group` (`id_group`, `id_login`, `subject`, `room`, `code_group`) VALUES
-(1, 0, '$subject', '$room', '$code_group'),
-(3, 1, 'sdgk', 'dfgfdg', '3sdf'),
-(4, 1, 'sadasd', 'asdasd', 'sdads'),
-(7, 1, '', '', '');
+(11, 63, 'asd', 'son', 'asd');
 
 -- --------------------------------------------------------
 
@@ -149,12 +113,7 @@ CREATE TABLE `list` (
 --
 
 INSERT INTO `list` (`id`, `id_user`, `id_group`) VALUES
-(1, 1, 3),
-(2, 1, 3),
-(3, 1, 3),
-(4, 1, 3),
-(5, 1, 2),
-(6, 1, 1);
+(7, 63, 11);
 
 -- --------------------------------------------------------
 
@@ -164,7 +123,7 @@ INSERT INTO `list` (`id`, `id_user`, `id_group`) VALUES
 
 CREATE TABLE `login` (
   `id_login` int(11) NOT NULL,
-  `name` text NOT NULL,
+  `name` varchar(100) NOT NULL,
   `password` varchar(15) NOT NULL,
   `email` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -174,10 +133,7 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id_login`, `name`, `password`, `email`) VALUES
-(1, 'phuc', '123', 'phuc@gmail.com'),
-(2, 'sơn', '123', 'son@gmail.com'),
-(3, 'phuc1', '123', 'phuc2'),
-(4, 'phuc1', '123', 'phuc2');
+(67, 'son', '123', 'jhj');
 
 --
 -- Indexes for dumped tables
@@ -217,7 +173,8 @@ ALTER TABLE `list`
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`id_login`);
+  ADD PRIMARY KEY (`id_login`),
+  ADD UNIQUE KEY `name` (`name`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -227,37 +184,37 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `assignment`
 --
 ALTER TABLE `assignment`
-  MODIFY `id_assign` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_assign` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id_cmt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_cmt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `detail`
 --
 ALTER TABLE `detail`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `group`
 --
 ALTER TABLE `group`
-  MODIFY `id_group` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_group` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `list`
 --
 ALTER TABLE `list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
